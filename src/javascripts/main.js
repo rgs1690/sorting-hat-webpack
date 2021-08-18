@@ -94,6 +94,7 @@ const addStudentToArray = (e) => {
     const sortedArray = sortStudentsByHouse(studentArray);
     cardCreator('#first-years-card-display', sortedArray);
   }
+  document.querySelector('#student-name').addEventListener('keyup', addStudentToArray); // this could have easily been accomplished by using a form tag instead of using separate form elements as form submits on enter key press also
 };
 
 const expelStudent = (e) => {
@@ -108,7 +109,6 @@ const domEvents = () => {
   document.querySelector('#sorting-form').addEventListener('click', addStudentToArray);
   document.querySelector('#first-years-card-display').addEventListener('click', expelStudent);
   document.querySelector('#start-sorting').addEventListener('click', showForm);
-  document.querySelector('#student-name').addEventListener('keyup', addStudentToArray); // this could have easily been accomplished by using a form tag instead of using separate form elements as form submits on enter key press also
 };
 const init = () => {
   domEvents();
